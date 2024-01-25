@@ -766,12 +766,6 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
                     size: const Size.fromHeight(16),
                   ),
                 _buildSubmitButton(theme, messages, auth),
-                if (!widget.hideSignUpButton)
-                  _buildSwitchAuthButton(theme, messages, auth, loginTheme)
-                else
-                  SizedBox.fromSize(
-                    size: const Size.fromHeight(10),
-                  ),
                 if (auth.loginProviders.isNotEmpty &&
                     !widget.hideProvidersTitle)
                   _buildProvidersTitleFirst(messages)
