@@ -273,7 +273,7 @@ class __HeaderState extends State<_Header> {
 
 class FlutterLogin extends StatefulWidget {
   FlutterLogin({
-    super.key,
+    Key? key,
     this.onSignup,
     required this.onLogin,
     required this.onRecoverPassword,
@@ -315,7 +315,8 @@ class FlutterLogin extends StatefulWidget {
     this.initialIsoCode,
     this.keyboardDismissBehavior = ScrollViewKeyboardDismissBehavior.manual,
   })  : assert((logo is String?) || (logo is ImageProvider?)),
-        logo = logo is String ? AssetImage(logo) : logo as ImageProvider?;
+        logo = logo is String ? AssetImage(logo) : logo as ImageProvider?,
+        super(key: key);
 
   /// Called when the user hit the submit button when in sign up mode
   ///

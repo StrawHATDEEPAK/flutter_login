@@ -430,7 +430,7 @@ void main() {
   testWidgets('Leave logo parameter empty should not display login logo image',
       (WidgetTester tester) async {
     // default device height is 600. Logo is hidden in all cases because there is no space to display
-    setScreenSize(const Size(786, 1024), tester);
+    setScreenSize(Size(786, 1024), tester);
 
     var flutterLogin = widget(
       FlutterLogin(
@@ -854,12 +854,12 @@ void main() {
     const enoughHeight = 680.0;
     const verySmallHeight = 500.0;
 
-    setScreenSize(const Size(480, veryLargeHeight), tester);
+    setScreenSize(Size(480, veryLargeHeight), tester);
     await tester.pumpWidget(flutterLogin);
     await tester.pumpAndSettle(loadingAnimationDuration);
     expect(logoWidget(tester).height, kMaxLogoHeight);
 
-    setScreenSize(const Size(480, enoughHeight), tester);
+    setScreenSize(Size(480, enoughHeight), tester);
     await tester.pumpWidget(flutterLogin);
     await tester.pumpAndSettle(loadingAnimationDuration);
     expect(
@@ -867,7 +867,7 @@ void main() {
       inInclusiveRange(kMinLogoHeight, kMaxLogoHeight),
     );
 
-    setScreenSize(const Size(480, verySmallHeight), tester);
+    setScreenSize(Size(480, verySmallHeight), tester);
     await tester.pumpWidget(flutterLogin);
     await tester.pumpAndSettle(loadingAnimationDuration);
     expect(findLogoImage(), findsNothing);
