@@ -28,7 +28,6 @@ part 'additional_signup_card.dart';
 part 'login_card.dart';
 part 'recover_card.dart';
 part 'recover_confirm_card.dart';
-part 'signup_confirm_card.dart';
 
 class AuthCard extends StatefulWidget {
   const AuthCard({
@@ -441,27 +440,27 @@ class AuthCardState extends State<AuthCard> with TickerProviderStateMixin {
           initialIsoCode: widget.initialIsoCode,
         );
 
-      case _confirmSignup:
-        return _buildLoadingAnimator(
-          theme: Theme.of(context),
-          child: _ConfirmSignupCard(
-            key: _confirmSignUpCardKey,
-            onBack: () {},
-            loadingController: formController,
-            onSubmitCompleted: () {
-              if (widget.loginAfterSignUp) {
-                // _forwardChangeRouteAnimation(_confirmSignUpCardKey).then((_) {
-                //   widget.onSubmitCompleted?.call();
-                // });
-              } else {
-                // _changeCard(_loginPageIndex);
-              }
-            },
-            loginAfterSignUp: widget.loginAfterSignUp,
-            keyboardType: widget.confirmSignupKeyboardType,
-            initialIsoCode: widget.initialIsoCode,
-          ),
-        );
+      // case _confirmSignup:
+      //   return _buildLoadingAnimator(
+      //     theme: Theme.of(context),
+      //     child: _ConfirmSignupCard(
+      //       key: _confirmSignUpCardKey,
+      //       onBack: () {},
+      //       loadingController: formController,
+      //       onSubmitCompleted: () {
+      //         if (widget.loginAfterSignUp) {
+      //           // _forwardChangeRouteAnimation(_confirmSignUpCardKey).then((_) {
+      //           //   widget.onSubmitCompleted?.call();
+      //           // });
+      //         } else {
+      //           // _changeCard(_loginPageIndex);
+      //         }
+      //       },
+      //       loginAfterSignUp: widget.loginAfterSignUp,
+      //       keyboardType: widget.confirmSignupKeyboardType,
+      //       initialIsoCode: widget.initialIsoCode,
+      //     ),
+      //   );
     }
     throw IndexError.withLength(index, 5);
   }
